@@ -1,0 +1,25 @@
+apiVersion: v1
+entries:
+  gateway-service-app:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-02-05T22:48:17.5356246+09:00"
+    description: gateway-service for kiosk
+    digest: 18db1eed11e542c808c21c2020cfabd06f6d0f8afdd5f8ae7c3e738d3a4d463b
+    name: gateway-service-app
+    type: application
+    urls:
+    - gateway-service-app-0.1.0.tgz
+    version: 0.1.0
+  user-service:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-02-05T22:48:17.5363031+09:00"
+    description: user-service for kiosk
+    digest: a6504a6b306237ef7d48d15a5d6dc34b05aba9e884d31bc9ba4be20818bf32a3
+    name: user-service
+    type: application
+    urls:
+    - user-service-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-02-05T22:48:17.5349706+09:00"
