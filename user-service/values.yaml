@@ -1,4 +1,5 @@
 replicaCount: 1
+namespace: user
 image:
   repository: rnrmf
   name: user-service-app
@@ -6,7 +7,8 @@ image:
   tag: 17
 containerPort: 8090
 springEnv:
-  userMysqlUrl: mysql-0.mysql.default.svc.cluster.local
+  userMysqlUrl: mysql-0.mysql.user.svc.cluster.local
+serviceType: ClusterIP
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
@@ -26,7 +28,7 @@ mysql:
   username: root
   password: root
 service:
-  type: LoadBalancer
+  type: ClusterIP
   port: 8090
 springApp:
   env:
