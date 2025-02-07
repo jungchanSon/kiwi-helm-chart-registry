@@ -3,7 +3,7 @@ image:
   repository: rnrmf
   name: store-service-app
   pullPolicy: IfNotPresent
-  tag: 24
+  tag: 25
 containerPort: 8090
 springEnv:
   storeMysqlUrl: mysql-0.mysql.store.svc.cluster.local
