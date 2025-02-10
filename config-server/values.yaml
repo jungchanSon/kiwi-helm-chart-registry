@@ -2,7 +2,7 @@ image:
   repository: rnrmf
   name: kiwi-config
   pullPolicy: IfNotPresent
-  tag: 47
+  tag: 48
 replicaCount: 1
 containerPort: 8888
 protocol: TCP
