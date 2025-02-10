@@ -1,22 +1,28 @@
 replicaCount: 1
+
 image:
   repository: rnrmf
   name: store-service-app
   pullPolicy: IfNotPresent
-  tag: 61
+  tag: 0
+
 containerPort: 8090
 springEnv:
   storeMysqlUrl: mysql-0.mysql.store.svc.cluster.local
+
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
+
 serviceAccount:
   create: true
   automount: true
   annotations: {}
   name: ""
+
 podAnnotations: {}
 podLabels: {}
+
 podSecurityContext: {}
 namespace: store
 securityContext: {}
@@ -27,9 +33,11 @@ mysql:
   database: dev
   username: root
   password: root
+
 service:
   type: ClusterIP
   port: 8090
+
 springApp:
   env:
     SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3306/dev"
@@ -45,7 +53,9 @@ ingress:
         - path: /
           pathType: ImplementationSpecific
   tls: []
+
 resources: {}
+
 livenessProbe:
   httpGet:
     path: /
@@ -54,13 +64,21 @@ readinessProbe:
   httpGet:
     path: /
     port: http
+
 autoscaling:
   enabled: false
   minReplicas: 1
   maxReplicas: 100
   targetCPUUtilizationPercentage: 80
+
 volumes: []
+
+
 volumeMounts: []
+
+
 nodeSelector: {}
+
 tolerations: []
+
 affinity: {}
