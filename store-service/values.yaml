@@ -4,7 +4,7 @@ image:
   name: store-service-app
   pullPolicy: IfNotPresent
   tag: 84
-containerPort: 8095
+containerPort: 8090
 springEnv:
   storeMysqlUrl: mysql-0.mysql.store.svc.cluster.local
 imagePullSecrets: []
