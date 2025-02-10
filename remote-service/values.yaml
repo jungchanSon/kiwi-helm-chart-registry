@@ -2,15 +2,11 @@ image:
   repository: rnrmf
   name: kiwi-remote-service
   pullPolicy: IfNotPresent
-  tag: latest
-
+  tag: 1
 replicaCount: 1
-
 containerPort: 8097
 protocol: TCP
-
 service:
   type: ClusterIP
   port: 8097
-
 namespace: config
