@@ -1,7 +1,8 @@
-kind: PersistentVolumeClaim
 apiVersion: v1
+kind: PersistentVolumeClaim
 metadata:
-  name: pvc-mysql
+  name: order-mysql-pvc
+  namespace: order
 spec:
   accessModes:
     - ReadWriteOnce

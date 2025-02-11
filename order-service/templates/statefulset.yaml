@@ -28,13 +28,10 @@ spec:
             - containerPort: 3306
               name: mysql
           volumeMounts:
-            - name: volume-mysql
+            - name: order-mysql-volume
               mountPath: /var/lib/mysql
-  volumeClaimTemplates:
-    - metadata:
-        name: volume-mysql
-      spec:
-        accessModes: ["ReadWriteOnce"]
-        resources:
-          requests:
-            storage: 10Gi
+      volumes:
+        - name: order-mysql-volume
+          persistentVolumeClaim:
+            claimName: order-mysql-pvc
+
