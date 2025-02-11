@@ -10,7 +10,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: local-storage
   local:
-    path: /mnt/data/kubernetes/pv/order-mysql
+    path: /keywe/kubernetes/pv/order-mysql
   nodeAffinity:
     required:
       nodeSelectorTerms:
