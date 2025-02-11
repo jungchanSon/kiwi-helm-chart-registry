@@ -34,4 +34,3 @@ spec:
         - name: order-mysql-volume
           persistentVolumeClaim:
             claimName: order-mysql-pvc
-
