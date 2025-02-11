@@ -30,9 +30,6 @@ spec:
           volumeMounts:
             - name: volume-mysql
               mountPath: /var/lib/mysql
-            - name: init-table
-              mountPath: /docker-entrypoint-initdb.d/
-              readOnly: true
   volumeClaimTemplates:
     - metadata:
         name: volume-mysql
@@ -41,4 +38,3 @@ spec:
         resources:
           requests:
             storage: 10Gi
-
