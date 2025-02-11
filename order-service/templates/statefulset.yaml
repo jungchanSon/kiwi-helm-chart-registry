@@ -10,7 +10,7 @@ spec:
   template:
     metadata:
       labels:
-        app: mysql
+{{/*        app: mysql*/}}
     spec:
       containers:
         - image: mysql:8.0
@@ -28,14 +28,14 @@ spec:
             - containerPort: 3306
               name: mysql
           volumeMounts:
-            - name: order-mysql-volume
+            - name: volume-mysql
               mountPath: /var/lib/mysql
   volumeClaimTemplates:
     - metadata:
-        name: order-mysql-volume
-        namespace: order
+        name: volume-mysql
       spec:
         accessModes: ["ReadWriteOnce"]
         resources:
           requests:
             storage: 10Gi
+        storageClassName: local-storage
