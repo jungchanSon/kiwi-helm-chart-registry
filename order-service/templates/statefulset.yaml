@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: mysql
+  name: order-mysql-sfs
 spec:
   selector:
     matchLabels:
@@ -10,7 +10,7 @@ spec:
   template:
     metadata:
       labels:
-{{/*        app: mysql*/}}
+        app: mysql
     spec:
       containers:
         - image: mysql:8.0
