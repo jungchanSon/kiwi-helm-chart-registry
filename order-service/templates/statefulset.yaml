@@ -30,7 +30,12 @@ spec:
           volumeMounts:
             - name: order-mysql-volume
               mountPath: /var/lib/mysql
-      volumes:
-        - name: order-mysql-volume
-          persistentVolumeClaim:
-            claimName: order-mysql-pvc
+  volumeClaimTemplates:
+    - metadata:
+        name: order-mysql-volume
+        namespace: order
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 10Gi
