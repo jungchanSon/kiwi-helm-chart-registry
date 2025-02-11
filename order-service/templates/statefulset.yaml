@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: mysql
-  serviceName: order-mysql-service
+  serviceName: mysql
   template:
     metadata:
       labels:
@@ -38,3 +38,4 @@ spec:
         resources:
           requests:
             storage: 10Gi
+
