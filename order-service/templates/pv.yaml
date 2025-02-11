@@ -11,3 +11,11 @@ spec:
   storageClassName: local-storage
   local:
     path: /mnt/data/kubernetes/pv/order-mysql
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - ip-172-26-3-54
