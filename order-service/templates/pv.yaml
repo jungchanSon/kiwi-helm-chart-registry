@@ -2,6 +2,7 @@ apiVersion: v1
 kind: PersistentVolume
 metadata:
   name: mysql
+  namespace: order
 spec:
   capacity:
     storage: 10Gi
