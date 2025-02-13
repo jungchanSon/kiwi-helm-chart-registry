@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: mysql
-  serviceName: order-mysql-service
+  serviceName: notification-mysql-service
   template:
     metadata:
       labels:
