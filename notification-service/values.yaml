@@ -1,6 +1,6 @@
 image:
   repository: rnrmf
-  name: kiwi-notification-service
+  name: notification-service-app
   pullPolicy: IfNotPresent
   tag: latest
 replicaCount: 1
