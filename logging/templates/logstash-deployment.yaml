@@ -52,13 +52,6 @@ spec:
               - key: pipelines.yml
                 path: pipelines.yml
 
-        - name: config-volume
-          configMap:
-            name: logstash-configmap
-            items:
-              - key: logstash.yml
-                path: logstash.yml
-
         - name: logstash-user-pipeline-volume
           configMap:
             name: logstash-user-configmap
