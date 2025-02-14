@@ -11,11 +11,11 @@ data:
     path.config: /usr/share/logstash/pipeline
 
   pipelines.yml: |
-    - pipeline.id: log_user_pipeline
-      path.config: "/usr/share/logstash/pipeline/log_user.conf"
+    - pipeline.id: user
+      path.config: '/usr/share/logstash/pipeline/log_user.conf'
 
-    - pipeline.id: log_store_pipeline
-      path.config: "/usr/share/logstash/pipeline/log_store.conf"
+    - pipeline.id: store
+      path.config: '/usr/share/logstash/pipeline/log_store.conf'
 
-    - pipeline.id: log_order_pipeline
-      path.config: "/usr/share/logstash/pipeline/log_order.conf"
+    - pipeline.id: order
+      path.config: '/usr/share/logstash/pipeline/log_order.conf'

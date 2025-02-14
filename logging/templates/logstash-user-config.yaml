@@ -23,7 +23,6 @@ data:
 
       mutate {
         rename => { "timestamp" => "log_timestamp" }
-        add_field => { "domain" => "user" }
       }
 
       date {
@@ -34,13 +33,11 @@ data:
     }
 
     output {
-      if [domain] == "user" {
-        elasticsearch {
-          hosts => ["elasticsearch:9200"]
-          user => "${ELASTIC_USERNAME}"
-          password => "${ELASTIC_PASSWORD}"
-          index => "logs-user-%{+YYYY.MM.dd}"
-          action => "create"
-        }
+      elasticsearch {
+        hosts => ["elasticsearch:9200"]
+        user => "${ELASTIC_USERNAME}"
+        password => "${ELASTIC_PASSWORD}"
+        index => "logs-user-%{+YYYY.MM.dd}"
+        action => "create"
       }
     }
