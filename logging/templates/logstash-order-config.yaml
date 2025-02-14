@@ -23,6 +23,7 @@ data:
 
       mutate {
         rename => { "timestamp" => "log_timestamp" }
+        add_field => { "domain" => "order" }
       }
 
       date {
@@ -33,11 +34,13 @@ data:
     }
 
     output {
-      elasticsearch {
-        hosts => ["elasticsearch:9200"]
-        user => "${ELASTIC_USERNAME}"
-        password => "${ELASTIC_PASSWORD}"
-        index => "logs-order-%{+YYYY.MM.dd}"
-        action => "create"
+      if [domain] == "order" {
+        elasticsearch {
+          hosts => ["elasticsearch:9200"]
+          user => "${ELASTIC_USERNAME}"
+          password => "${ELASTIC_PASSWORD}"
+          index => "logs-order-%{+YYYY.MM.dd}"
+          action => "create"
+        }
       }
     }
