@@ -27,6 +27,9 @@ spec:
           volumeMounts:
             - name: config-volume
               mountPath: /usr/share/logstash/config
+            - name: logstash-pipelines
+              mountPath: /usr/share/logstash/config/pipelines.yml
+              subPath: pipelines.yml
             - name: tz-seoul
               mountPath: /etc/localtime
             - name: logstash-user-pipeline-volume
@@ -42,6 +45,18 @@ spec:
         - name: tz-seoul
           hostPath:
             path: /usr/share/zoneinfo/Asia/Seoul
+
+        - name: logstash-pipelines
+          configMap:
+            name: logstash-pipelines
+
+        - name: config-volume
+          configMap:
+            name: logstash-configmap
+            items:
+              - key: logstash.yml
+                path: logstash.yml
+
         - name: config-volume
           configMap:
             name: logstash-configmap

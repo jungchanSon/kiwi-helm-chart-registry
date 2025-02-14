@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: logstash-pipelines
+data:
+  pipelines.yml: |
+    - pipeline.id: log_user_pipeline
+      path.config: "/usr/share/logstash/pipeline/log_user.conf"
+
+    - pipeline.id: log_store_pipeline
+      path.config: "/usr/share/logstash/pipeline/log_store.conf"
+
+    - pipeline.id: log_order_pipeline
+      path.config: "/usr/share/logstash/pipeline/log_order.conf"
+
