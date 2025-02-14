@@ -31,6 +31,15 @@ spec:
               mountPath: /usr/share/logstash/pipeline
             - name: tz-seoul
               mountPath: /etc/localtime
+            - name: logstash-user-pipeline-volume
+              mountPath: /usr/share/logstash/pipeline/log_user.conf
+              subPath: log_user.conf
+            - name: logstash-store-pipeline-volume
+              mountPath: /usr/share/logstash/pipeline/log_store.conf
+              subPath: log_store.conf
+            - name: logstash-order-pipeline-volume
+              mountPath: /usr/share/logstash/pipeline/log_order.conf
+              subPath: log_order.conf
       volumes:
         - name: tz-seoul
           hostPath:
@@ -43,15 +52,28 @@ spec:
                 path: logstash.yml
         - name: logstash-pipeline-volume
           configMap:
-            - name: logstash-user-configmap
-              items:
+            name: logstash-configmap
+            items:
+              - key: log_gateway.conf
+                path: log_gateway.conf
+
+        - name: logstash-user-pipeline-volume
+          configMap:
+            name: logstash-user-configmap
+            items:
               - key: log_user.conf
                 path: log_user.conf
-            - name: logstash-store-configmap
-              items:
-                - key: log_store.conf
-                  path: log_store.conf
-            - name: logstash-order-configmap
-              items:
-                - key: log_order.conf
-                  path: log_order.conf
+
+        - name: logstash-store-pipeline-volume
+          configMap:
+            name: logstash-store-configmap
+            items:
+              - key: log_store.conf
+                path: log_store.conf
+
+        - name: logstash-order-pipeline-volume
+          configMap:
+            name: logstash-order-configmap
+            items:
+              - key: log_order.conf
+                path: log_order.conf
