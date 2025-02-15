@@ -30,14 +30,14 @@ spec:
             - containerPort: 3306
               name: mysql
           volumeMounts:
-            - name: volume-mysql
+            - name: banking-volume-mysql
               mountPath: /var/lib/mysql
             - name: init-table
               mountPath: /docker-entrypoint-initdb.d/
               readOnly: true
   volumeClaimTemplates:
     - metadata:
-        name: volume-mysql
+        name: banking-volume-mysql
       spec:
         accessModes: ["ReadWriteOnce"]
         resources:
