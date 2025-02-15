@@ -25,7 +25,7 @@ spec:
               value: {{ .Values.springEnv.userMysqlUrl}}
             - name: PROFILE
               value: prod
-            - name: KAFKAURL
+            - name: KAFKA_URL
               value: kraft-cluster-kafka-bootstrap.kafka.svc.cluster.local
             - name: NOTIFICATION_SERVICE_URL
               value: notification-server-app.notification.svc.cluster.local
