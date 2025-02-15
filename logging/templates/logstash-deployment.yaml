@@ -38,6 +38,9 @@ spec:
             - name: logstash-order-pipeline-volume
               mountPath: /usr/share/logstash/pipeline/log_order.conf
               subPath: log_order.conf
+            - name: logstash-banking-pipeline-volume
+              mountPath: /usr/share/logstash/pipeline/log_banking.conf
+              subPath: log_banking.conf
       volumes:
         - name: tz-seoul
           hostPath:
@@ -64,6 +67,13 @@ spec:
             name: logstash-store-configmap
             items:
               - key: log_store.conf
+                path: log_store.conf
+
+        - name: logstash-banking-pipeline-volume
+          configMap:
+            name: logstash-banking-configmap
+            items:
+              - key: log_banking.conf
                 path: log_store.conf
 
         - name: logstash-order-pipeline-volume
