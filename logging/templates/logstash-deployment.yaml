@@ -74,7 +74,7 @@ spec:
             name: logstash-banking-configmap
             items:
               - key: log_banking.conf
-                path: log_store.conf
+                path: log_banking.conf
 
         - name: logstash-order-pipeline-volume
           configMap:
