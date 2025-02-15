@@ -32,6 +32,6 @@ spec:
             - name: DOMAIN_NAME
               value: i12a404.p.ssafy.io
             - name: USER_SERVICE_REDIS_NAME
-              value: kiwi-redis-user
+              value: redis-0.redis.user.svc.cluster.local
             - name: USER_SERVICE_REDIS_PORT
               value: "6379"
