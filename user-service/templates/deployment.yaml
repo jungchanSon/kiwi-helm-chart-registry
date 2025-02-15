@@ -27,3 +27,11 @@ spec:
               value: prod
             - name: KAFKAURL
               value: kraft-cluster-kafka-bootstrap.kafka.svc.cluster.local
+            - name: NOTIFICATION_SERVICE_URL
+              value: notification-service-app
+            - name: DOMAIN_NAME
+              value: i12a404.p.ssafy.io
+            - name: USER_SERVICE_REDIS_NAME
+              value: kiwi-redis-user
+            - name: USER_SERVICE_REDIS_PORT
+              value: "6379"
